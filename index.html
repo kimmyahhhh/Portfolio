@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimberly Gayle Rafael</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            background-color: #F5F5F4; /* Light background */
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -3%;
+            width: 100%;
+            height: 100%;
+            background-size: contain; /* Adjust to 'cover' if needed */
+            opacity: 0.3; /* Light watermark effect */
+            z-index: -1; /* Send it to the back */
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+        }
+        .navbar {
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            background-color: #000c66 !important;
+        }
+        .nav-item {
+            margin: 0 15px;
+        }
+        .nav-link {
+            color: white; /* Change navbar text color to white */
+        }
+        .nav-link.active {
+            color: lightblue; /* Change color to light blue when active */
+        }
+        .learn-btn {
+            position: absolute;
+            bottom: 15%;
+            left: 20%;
+            background-color: #000c66; /* Set button background color */
+            color: white; /* Set button text color */
+            border: none; /* Remove border */
+        }
+        .info-text {
+            text-align: justify;
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+            width: 35%;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.5;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            border: 1px solid #050a30; /* Darker blue border */
+            box-shadow: 0 0 20px #000c66; /* Glow effect */
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #000c66; /* Dark blue */
+            color: #F5F5F4; /* Light text color */
+        }
+        .right-image {
+            position: absolute;
+            bottom: 10%;
+            right: -0.9%;
+            left: 60%;
+            width: 450px; /* Set a fixed width */
+            height: 450px; /* Set a fixed height */
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Ensure the image covers the area */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto">
+               <!----- <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="home">Home</a></li> ---->
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="skills" data-bs-toggle="modal" data-bs-target="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="experience" data-bs-toggle="modal" data-bs-target="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="certifications" data-bs-toggle="modal" data-bs-target="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="objective" data-bs-toggle="modal" data-bs-target="#objective">Professional Objective</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="info-text">
+            <p>Hello! I'm <b>Kimberly Gayle Rafael</b>, an enthusiastic IT professional dedicated to leveraging technology to solve real-world challenges. With a strong foundation in software development and a passion for continuous learning, I specialize in creating innovative solutions that enhance user experiences.</p>
+            <p>Feel free to navigate through my portfolio to view my projects, skills, and certifications. Whether you’re looking for a developer, a team player, or someone who can bring fresh ideas to the table, I’m here to help!</p>
+        </div>
+        <!-----<button class="btn btn-info learn-btn" onclick="location.href='resume.html'">View Resume</button> ----->
+    </div>
+
+    <img src="ngi.png" alt="Right Image" class="right-image" onclick="changeImage()">
+
+    <footer class="footer">
+        &copy; 2025. All rights reserved.
+    </footer>
+
+    <script>
+        let currentImage = 0;
+        const images = ['ngi.png', 'ngi111.jpg', 'ngi1.jpg'];
+
+        function changeImage() {
+            currentImage = (currentImage + 1) % images.length; // Cycle through images
+            document.querySelector('.right-image').src = images[currentImage]; // Change the image source
+        }
+    </script>
+
+    <!-- Portfolio Modals -->
+    <div id="skills" class="modal fade" tabindex="-1" aria-labelledby="skillsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="skillsLabel">Skills</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Proficient in C#, C++, Java, Dart, SQL, HTML, CSS, JavaScript, Python. Experienced in web development and database management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="modal fade" tabindex="-1" aria-labelledby="experienceLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="experienceLabel">Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Developed the Brgy. Management System for Narvacan and created DissCon: An Integrated Mobile Solution for Disaster Risk Awareness and Response in Guimba, Nueva Ecija.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="certifications" class="modal fade" tabindex="-1" aria-labelledby="certificationsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="certificationsLabel">Certifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Cisco</li>
+                        <li>Data Analytics</li>
+                        <li>Cybersecurity</li>
+                        <li>RAITE 1 & 2</li>
+                        <li>Python Essentials 1 & 2</li>
+                        <li>Y4IT</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="objective" class="modal fade" tabindex="-1" aria-labelledby="objectiveLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objectiveLabel">Professional Objective</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>To leverage my skills in web development to contribute to innovative projects and enhance user experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.open-modal').forEach(function(link) {
+            link.onclick = function(event) {
+                event.preventDefault();
+                var modalId = this.getAttribute('data-modal');
+                var modal = new bootstrap.Modal(document.getElementById(modalId));
+                modal.show();
+            }
+        });
+    </script>
+</body>
+</html>
